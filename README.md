@@ -1,7 +1,5 @@
 # Slack File Downloads
 
----
-
 Downloads all files of messages of your Slack (workspace) JSON export. Each channel will be processed and a separate
 folder (default=files) gets created containing all files.
 
