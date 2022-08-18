@@ -47,7 +47,7 @@ def process_directories(root: str, dirs: List[str], output: str) -> None:
         files = [f for f in files if f.lower().endswith('.json')]
 
         for file in files:
-            file_path = os.path.join(root, dir_path, file)
+            file_path = os.path.join(dir_path, file)
             data = json.load(open(file_path))
             [process_message(message, output_dir_path, num=index, total=total_dirs) for message in data]
 
