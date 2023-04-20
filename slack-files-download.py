@@ -66,9 +66,12 @@ def process_message(message: json, output_dir_path: str, num: int, total: int) -
 
                 progress(num, total, suffix=output_file_name)
 
-                with urlopen(item['url_private']) as remote_file:
-                    with open(output_file_path, 'wb') as download:
-                        download.write(remote_file.read())
+                try:
+                    with urlopen(item['url_private']) as remote_file:
+                        with open(output_file_path, 'wb') as download:
+                            download.write(remote_file.read())
+                except Exception as e:
+                    print(e)
 
 
 # Thanks to Vladimir Ignatyev, https://stackoverflow.com/a/27871113/135160
