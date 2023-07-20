@@ -48,7 +48,7 @@ def process_directories(root: str, dirs: List[str], output: str) -> None:
 
         for file in files:
             file_path = os.path.join(dir_path, file)
-            data = json.load(open(file_path))
+            data = json.load(open(file_path, encoding='utf8'))
             [process_message(message, output_dir_path, num=index, total=total_dirs) for message in data]
 
         progress(index, total_dirs, suffix='processed channels')
